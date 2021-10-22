@@ -148,6 +148,15 @@ header.smaller .Navigation li { height: 60px; }
 .Banner_sec .rightside .nextBtn:hover { opacity: 1; }	
 .Banner_sec .rightside .Shadow { position: absolute; bottom: -3px; left: -25px; max-width: none; }
 
+/* Comment Section */
+.comment-section{
+	position: relative;
+	left: 40vw;
+	top: 40px;
+	width: 470px;
+}
+/* End Comment Section */
+
 /* <<< bg color>>> */
 .bgcolor {  height: 74px; width: 100%; background: rgba(249,250,251,1); background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(249,250,251,1)), color-stop(0%, rgba(249,250,251,1)), color-stop(100%, rgba(225,228,231,1)));
 	background: linear-gradient(to bottom, rgba(249,250,251,1) 0%, rgba(249,250,251,1) 0%, rgba(225,228,231,1) 100%);
