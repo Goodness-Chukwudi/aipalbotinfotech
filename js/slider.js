@@ -120,18 +120,19 @@ function handleReaction(e) {
 	//CHECKED IF ALREADY LIKED... if image src is in the list of liked images
 	//if true, do nothing
 	//else save in the list of liked image src and post
+	let likedImage = imgPath[k];
 	let { isAlreadyLiked, imgLikes } = saveLikes();
 	if (!isAlreadyLiked) {
 		reactBtn.style.backgroundColor = "#b45460";
 		postImageDetail({
-			imgSource: imgPath[k],
+			imgSource: likedImage,
 			reaction: {
 				isLiked: true,
 			},
 		});
 
 		//add the img src to already liked images and save back to db
-		imgLikes.push(imgPath[k]);
+		imgLikes.push(likedImage);
 		localStorage.setItem("aipalbot-image-likes", JSON.stringify(imgLikes));
 	}
 	e.preventDefault();
@@ -211,7 +212,7 @@ function showAlert(msg) {
 	}, 5000);
 }
 
-function saveLikes() {
+function saveLikes(likedImage) {
 	let imgLikes = [],
 		isAlreadyLiked = false;
 	const likes = localStorage.getItem("aipalbot-image-likes");
@@ -219,7 +220,7 @@ function saveLikes() {
 		imgLikes = JSON.parse(likes);
 	}
 	imgLikes.forEach((imgLike) => {
-		if (imgLike == imgPath[k]) return (isAlreadyLiked = true);
+		if (imgLike == likedImage) return (isAlreadyLiked = true);
 	});
 
 	return { isAlreadyLiked, imgLikes };
