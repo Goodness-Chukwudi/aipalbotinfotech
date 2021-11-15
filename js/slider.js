@@ -111,7 +111,7 @@ function setImageValues(currPath) {
 		}
 	}
 	document.querySelector(".comment-list").innerHTML = comments;
-	let { isAlreadyLiked } = saveLikes();
+	let { isAlreadyLiked } = saveLikes(currPath);
 	if (isAlreadyLiked) reactBtn.style.backgroundColor = "#b45460";
 	else reactBtn.style.backgroundColor = "transparent";
 }
@@ -121,7 +121,7 @@ function handleReaction(e) {
 	//if true, do nothing
 	//else save in the list of liked image src and post
 	let likedImage = imgPath[k];
-	let { isAlreadyLiked, imgLikes } = saveLikes();
+	let { isAlreadyLiked, imgLikes } = saveLikes(likedImage);
 	if (!isAlreadyLiked) {
 		reactBtn.style.backgroundColor = "#b45460";
 		postImageDetail({
