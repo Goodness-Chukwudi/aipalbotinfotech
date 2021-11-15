@@ -155,7 +155,7 @@ function handleComment() {
 
 function fetchImageDetails() {
 	axios
-		.get("http://localhost:3000/imageDetail")
+		.get("https://aipalbotinfotech.herokuapp.com/imageDetail")
 		.then((response) => {
 			imageDetails = response.data;
 			setImageValues(imgPath[k]);
@@ -173,7 +173,7 @@ function fetchImageDetails() {
 
 function postImageDetail(data) {
 	axios
-		.post("http://localhost:3000/imageDetail", data)
+		.post("https://aipalbotinfotech.herokuapp.com/imageDetail", data)
 		.then((response) => {
 			imageDetails = response.data;
 			setImageValues(imgPath[k]);

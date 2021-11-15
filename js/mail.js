@@ -8,7 +8,7 @@ submitBtn.addEventListener("click", sendMail);
 
 function sendMail(e) {
 	axios
-		.post("http://localhost:3000/contact", {
+		.post("https://aipalbotinfotech.herokuapp.com/contact", {
 			sender: senderName.value,
 			email: senderEmail.value,
 			title: title.value,
